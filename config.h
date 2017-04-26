@@ -8,6 +8,7 @@ static const char normfgcolor[]     = "#e3e3e3";
 static const char selbordercolor[]  = "#9442af";
 static const char selbgcolor[]      = "#9442af";
 static const char selfgcolor[]      = "#1d1f24";
+static const unsigned int gappx     = 18;       /* gap pixel between windows */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
