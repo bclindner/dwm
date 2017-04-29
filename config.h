@@ -1,5 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-#include "movestack.c"
+
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#171d24";
@@ -55,11 +55,22 @@ static const char *dmenucmd[] = { "rofi", "-show", "run", "-font", "Terminus 12"
 static const char *termcmd[]  = { "x-terminal-emulator", NULL };
 static const char *webcmd[]  = { "chromium-browser", NULL };
 
+#include "movestack.c"
+#include "shiftview.c"
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	// movestack specific
-	{ MODKEY,                       XK_Left,   movestack,      {.i = -1 } },
-	{ MODKEY,                       XK_Right,  movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Right,  movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Left,   movestack,      {.i = -1 } },
+	// shiftview specific
+	{ MODKEY,                       XK_Right,  shiftview,      {.i = +1 } },
+	{ MODKEY,                       XK_Left,   shiftview,      {.i = -1 } },
+	// tiling/stacked swap
+	{ MODKEY,                       XK_Up,     incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_Down,   incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_j,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_k,      incnmaster,     {.i = -1 } },
 	// spawn keys (app shortcuts)
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
