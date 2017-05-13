@@ -2129,10 +2129,6 @@ zoom(const Arg *arg) {
 	pop(c);
 }
 
-runAutostart(void) {
-	system("cd ~/.dwm; ./autostart_blocking.sh");
-	system("cd ~/.dwm; ./autostart.sh &");
-}
 
 int
 main(int argc, char *argv[]) {
@@ -2147,7 +2143,6 @@ main(int argc, char *argv[]) {
 	checkotherwm();
 	setup();
 	scan();
-	runAutostart();
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
