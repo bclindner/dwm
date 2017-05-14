@@ -2,8 +2,8 @@
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#171d24";
-static const char normbgcolor[]     = "#171d24";
+static const char normbordercolor[] = "#1d1f21";
+static const char normbgcolor[]     = "#1d1f21";
 static const char normfgcolor[]     = "#e3e3e3";
 static const char selbordercolor[]  = "#875FD7";
 static const char selbgcolor[]      = "#875FD7";
